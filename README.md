@@ -88,10 +88,10 @@ At each time step $$\( t \)$$:
 
 1. **Prediction Step**  
    Based on the control input $$\( u_t \)$$:
-   
-   $$
-   \overline{bel}(x_t) = \int p(x_t \mid u_t, x_{t-1}) \, bel(x_{t-1}) \, dx_{t-1}
-   $$
+
+$$
+\overline{bel}(x_t) = \int p(x_t \mid u_t, x_{t-1}) \, bel(x_{t-1}) \, dx_{t-1}
+$$
 
    - $$\( \overline{bel}(x_t) \)$$: Predicted belief before observing new measurement  
    - $$\( p(x_t \mid u_t, x_{t-1}) \)$$: Motion (state transition) model  
