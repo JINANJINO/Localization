@@ -70,5 +70,58 @@ This equation blends the new sample $$\( x_k \)$$ with the previous mean $$\( a_
 
 ### 2.3 Implementation Example
 > You can find this in my repository in the **```average_filter.py```** file.
+
+- **Result**
+
+[Screencast from 10-11-2025 03:26:20 PM.webm](https://github.com/user-attachments/assets/194b4635-ca8b-4854-adc5-37455bcf7551)
+
+---
+
+## 3. Bayes Filter
+The **Bayes Filter** is a probabilistic approach to estimate the **state** of a system (e.g., robot position) given **uncertain measurements** and **control inputs**.
+
+It follows the principle of **Bayesian inference**, combining **prior belief**, **motion model**, and **sensor model** to compute a **posterior belief**.
+
+### 🔸 Algorithmic Form
+
+At each time step $$\( t \)$$:
+
+1. **Prediction Step**  
+   Based on the control input $$\( u_t \)$$:
+   
+   $$
+   \overline{bel}(x_t) = \int p(x_t \mid u_t, x_{t-1}) \, bel(x_{t-1}) \, dx_{t-1}
+   $$
+
+   - $$\( \overline{bel}(x_t) \)$$: Predicted belief before observing new measurement  
+   - $$\( p(x_t \mid u_t, x_{t-1}) \)$$: Motion (state transition) model  
+   - $$\( bel(x_{t-1}) \)$$: Previous belief distribution  
+
+3. **Correction (Update) Step**  
+   Incorporating the measurement $$\( z_t \)$$:
+
+   $$
+   bel(x_t) = \eta \, p(z_t \mid x_t) \, \overline{bel}(x_t)
+   $$
+
+   - $$\( bel(x_t) \)$$: Updated (posterior) belief  
+   - $$\( p(z_t \mid x_t) \)$$: Sensor model  
+   - $$\( \eta \)$$: Normalization constant ensuring probabilities sum to 1  
+
+### 🔹 Intuitive Explanation
+- The **Prediction Step** moves the belief based on how the system is expected to evolve.
+- The **Correction Step** adjusts this belief based on what the sensors observe.
+- Over time, this iterative process converges toward a more accurate estimate of the true state — even under uncertainty.
+
+---
+
+## Summary Comparison
+
+| Filter Type | Nature | Handles Uncertainty | Use Case |
+|--------------|--------|--------------------|-----------|
+| Moving Average Filter | Deterministic | ❌ No | Simple smoothing for noisy data |
+| Bayes Filter | Probabilistic | ✅ Yes | Robot localization, tracking, SLAM |
+
+---
     a_k = ((k - 1) / k) * a_prev + (1 / k) * x_k
     return a_k
