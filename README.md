@@ -123,5 +123,4 @@ At each time step $$\( t \)$$:
 | Bayes Filter | Probabilistic | ✅ Yes | Robot localization, tracking, SLAM |
 
 ---
-    a_k = ((k - 1) / k) * a_prev + (1 / k) * x_k
-    return a_k
+
