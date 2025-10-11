@@ -100,9 +100,9 @@ $$
 3. **Correction (Update) Step**  
    Incorporating the measurement $$\( z_t \)$$:
 
-   $$
-   bel(x_t) = \eta \, p(z_t \mid x_t) \, \overline{bel}(x_t)
-   $$
+$$
+bel(x_t) = \eta \, p(z_t \mid x_t) \, \overline{bel}(x_t)
+$$
 
    - $$\( bel(x_t) \)$$: Updated (posterior) belief  
    - $$\( p(z_t \mid x_t) \)$$: Sensor model  
