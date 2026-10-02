@@ -7,7 +7,7 @@ Essentially, localization enables a robot to answer the fundamental question: **
 
 ---
 
-### 🔹 Key Components of Localization
+### Key Components of Localization
 
 To perform localization, a robot typically needs three components:
 
@@ -82,7 +82,7 @@ The **Bayes Filter** is a probabilistic approach to estimate the **state** of a 
 
 It follows the principle of **Bayesian inference**, combining **prior belief**, **motion model**, and **sensor model** to compute a **posterior belief**.
 
-### 🔸 Algorithmic Form
+### Algorithmic Form
 
 At each time step $$\( t \)$$:
 
@@ -108,7 +108,7 @@ $$
    - $$\( p(z_t \mid x_t) \)$$: Sensor model  
    - $$\( \eta \)$$: Normalization constant ensuring probabilities sum to 1  
 
-### 🔹 Intuitive Explanation
+### Intuitive Explanation
 - The **Prediction Step** moves the belief based on how the system is expected to evolve.
 - The **Correction Step** adjusts this belief based on what the sensors observe.
 - Over time, this iterative process converges toward a more accurate estimate of the true state — even under uncertainty.
